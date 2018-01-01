@@ -1,4 +1,4 @@
-state.name,state.abbr,long.name,fips,sumlev,region,division,state,region.name,division.name
+state_name,state_abbr,long_name,fips,sumlev,region,division,state,region_name,division_name
 Alabama,AL,Alabama AL,1,40,3,6,1,South,East South Central
 Alaska,AK,Alaska AK,2,40,4,9,2,West,Pacific
 Arizona,AZ,Arizona AZ,4,40,4,8,4,West,Mountain

@@ -4,17 +4,17 @@ Kieran Healy (`@kjhealy`)
 
 ## Summary
 
-- Three CSV files with some basic FIPS identifying information for US States (`state-fips-master.csv`), Counties (`county-fips-master.csv`), and both together (`state-and-county-fips-master.csv`). I got sick of constantly having to write code to match on one or other of these identifiers in order to merge data files (e.g. for maps). So this can serve as a basis for harmonizing files that use one, some, or some variant of these identifiers. For example, sometimes leading zeros are omitted in the FIPS, sometimes not; sometimes the FIPS is coded in data as one number, sometimes as a character-vector of digits, sometimes as two separate state and county numbers, and so on. The Census also has its own supra-state units (regions and divisions). These files make it easier to merge and match to data indexed in one or other of these ways.
+- Three CSV files with some basic FIPS identifying information for US States (`state_fips_master.csv`), Counties (`county_fips_master.csv`), and both together (`state_and_county_fips_master.csv`). I got sick of constantly having to write code to match on one or other of these identifiers in order to merge data files (e.g. for maps). So this can serve as a basis for harmonizing files that use one, some, or some variant of these identifiers. For example, sometimes leading zeros are omitted in the FIPS, sometimes not; sometimes the FIPS is coded in data as one number, sometimes as a character-vector of digits, sometimes as two separate state and county numbers, and so on. The Census also has its own supra-state units (regions and divisions). These files make it easier to merge and match to data indexed in one or other of these ways.
 
 
 
 
 ## Files
 
-The `county-fips-master.csv` file looks like this:
+The `county_fips_master.csv` file looks like this:
 
 
-| fips|county.name    |state.abbr |state.name |long.name         | sumlev| region| division| state| county|crosswalk |region.name |division.name      |
+| fips|county_name    |state_abbr |state_name |long_name         | sumlev| region| division| state| county|crosswalk |region_name |division_name      |
 |----:|:--------------|:----------|:----------|:-----------------|------:|------:|--------:|-----:|------:|:---------|:-----------|:------------------|
 | 1001|Autauga County |AL         |Alabama    |Autauga County AL |     50|      3|        6|     1|      1|3-6-1-1   |South       |East South Central |
 | 1003|Baldwin County |AL         |Alabama    |Baldwin County AL |     50|      3|        6|     1|      3|3-6-1-3   |South       |East South Central |
@@ -25,10 +25,10 @@ The `county-fips-master.csv` file looks like this:
 
 - `crosswalk` is just a concatenation of region, division, state, and county identifiers, sometimes useful for merging with files that do not include a full numeric FIPS code, but instead split it up by state and county.
 
-The `state-fips-master.csv` file looks like this:
+The `state_fips_master.csv` file looks like this:
 
 
-|state.name |state.abbr |long.name     | fips| sumlev| region| division| state|region.name |division.name      |
+|state_name |state_abbr |long_name     | fips| sumlev| region| division| state|region_name |division_name      |
 |:----------|:----------|:-------------|----:|------:|------:|--------:|-----:|:-----------|:------------------|
 |Alabama    |AL         |Alabama AL    |    1|     40|      3|        6|     1|South       |East South Central |
 |Alaska     |AK         |Alaska AK     |    2|     40|      4|        9|     2|West        |Pacific            |
@@ -37,7 +37,7 @@ The `state-fips-master.csv` file looks like this:
 |California |CA         |California CA |    6|     40|      4|        9|     6|West        |Pacific            |
 |Colorado   |CO         |Colorado CO   |    8|     40|      4|        8|     8|West        |Mountain           |
 
-And the `state-and-county-fips-master.csv` file looks like this:
+And the `state_and_county_fips_master.csv` file looks like this:
 
 
 | fips|name           |state |
